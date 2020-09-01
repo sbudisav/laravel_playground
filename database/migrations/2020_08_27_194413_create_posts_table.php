@@ -15,11 +15,19 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('slug');
             $table->string('title');
             $table->text('body');
             $table->timestamps();
-            $table->timestamp('published_at');
+            $table->timestamp('published_at')->nullable();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
+                // ->onDelete('cascade');
+                // Not using this, as I defined a method in post model
+                // that uses a placeholder if user is deleted
         });
     }
 

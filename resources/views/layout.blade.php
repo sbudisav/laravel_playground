@@ -21,10 +21,6 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 70vh;
-            }
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -47,6 +43,7 @@
 
             .content {
                 text-align: center;
+                margin: 0 90px;
             }
 
             .title {

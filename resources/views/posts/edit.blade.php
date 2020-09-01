@@ -9,14 +9,20 @@
         <h2> 
             Edit Post
         </h2>
-            <form method="POST" action="/posts{{ $post->slug }}">
-            @csrf
-            @method('PUT')
+            <form method="POST" action="/posts/{{ $post->slug }}">
+                @csrf
+                @method('PUT')
                 <div class="field">
                     <label class="label" for="title">Title</label>
 
                     <div class="control">
-                        <input class="input post-text-box" type="text" name="title" id="title" value="{{ $post->title }}">
+                        <input 
+                            class="input post-text-box" 
+                            type="text" 
+                            name="title" 
+                            id="title" 
+                            value="{{ $post->title }}"></input>
+
                         @error('title')
                             <p class="help is-danger">{{ $errors->first('title') }}</p>
                         @enderror
@@ -27,7 +33,12 @@
                     <label class="label" for="body">Body</label>
 
                     <div class="control">
-                        <input class="post-text-box textarea" name="body" id="body" value="{{ $post->body }}"></input>
+                        <input 
+                            class="post-text-box textarea" 
+                            name="body" 
+                            id="body" 
+                            value="{{ $post->body }}"></input>
+
                         @error('title')
                             <p class="help is-danger">{{ $errors->first('title') }}</p>
                         @enderror
