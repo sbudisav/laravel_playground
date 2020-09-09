@@ -23,3 +23,6 @@ Route::get('/posts/create', 'PostsController@create');
 Route::get('/posts/{post}', 'PostsController@show')->name('post.show');
 Route::get('/posts/{post}/edit', 'PostsController@edit');
 Route::put('/posts/{post}', 'PostsController@update');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
